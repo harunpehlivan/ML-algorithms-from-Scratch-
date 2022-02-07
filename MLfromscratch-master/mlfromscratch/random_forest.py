@@ -13,8 +13,7 @@ def bootstrap_sample(X, y):
 
 def most_common_label(y):
     counter = Counter(y)
-    most_common = counter.most_common(1)[0][0]
-    return most_common
+    return counter.most_common(1)[0][0]
 
 
 class RandomForest:
@@ -51,8 +50,7 @@ if __name__ == "__main__":
     from sklearn.model_selection import train_test_split
 
     def accuracy(y_true, y_pred):
-        accuracy = np.sum(y_true == y_pred) / len(y_true)
-        return accuracy
+        return np.sum(y_true == y_pred) / len(y_true)
 
     data = datasets.load_breast_cancer()
     X = data.data

@@ -19,8 +19,7 @@ class SVM:
 
         for _ in range(self.n_iters):
             for idx, x_i in enumerate(X):
-                condition = y_[idx] * (np.dot(x_i, self.w) - self.b) >= 1
-                if condition:
+                if condition := y_[idx] * (np.dot(x_i, self.w) - self.b) >= 1:
                     self.w -= self.lr * (2 * self.lambda_param * self.w)
                 else:
                     self.w -= self.lr * (
